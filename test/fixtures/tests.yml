@@ -3,11 +3,11 @@
 one:
   title: MyText
   level: 1
-  author: MyString
   category: one
+  user: one
 
 two:
   title: MyText
   level: 1
-  author: MyString
   category: two
+  user: two

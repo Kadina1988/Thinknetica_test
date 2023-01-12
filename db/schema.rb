@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_09_143052) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_12_100121) do
   create_table "answers", force: :cascade do |t|
     t.boolean "correct", default: true, null: false
     t.integer "question_id", null: false
@@ -36,11 +36,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_09_143052) do
   create_table "tests", force: :cascade do |t|
     t.text "title", null: false
     t.integer "level", default: 1, null: false
-    t.string "author", default: "Aziev", null: false
     t.integer "category_id", null: false
+    t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["category_id"], name: "index_tests_on_category_id"
+    t.index ["user_id"], name: "index_tests_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -52,4 +53,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_09_143052) do
   add_foreign_key "answers", "questions"
   add_foreign_key "questions", "tests"
   add_foreign_key "tests", "categories"
+  add_foreign_key "tests", "users"
 end
