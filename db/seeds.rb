@@ -5,52 +5,47 @@ users = User.create!([
 categories = Category.create!([{ title: 'Литература' }, {title: 'Информатика' }, {title: 'История'}])
 
 tests = Test.create!([
-  { title: 'ГЛАВНЫЕ ГЕРОИ СКАЗОК', category_id: categories[0].id, author_id: users[0].id },
-  { title: 'КОДИРОВАНИЕ ИНФОРМАЦИИ' , category_id: categories[1].id, level: 2, author_id: users[1].id },
-  { title: 'ДРЕВНИЙ МИР', category_id: categories[2].id, author_id: users[0].id }])
+  { title: 'ГЛАВНЫЕ ГЕРОИ СКАЗОК', category: categories[0], author: users[0] },
+  { title: 'КОДИРОВАНИЕ ИНФОРМАЦИИ' , category: categories[1], level: 2, author: users[1] },
+  { title: 'ДРЕВНИЙ МИР', category: categories[2], author: users[0] }])
 
 questions = Question.create!([
-  { body: 'Какой герой очень известной волшебной сказки продал свою азбуку?', test_id: tests[0].id },
-  { body: 'Единственная птица, у которой есть ушные раковины', test_id: tests[0].id },
-  { body: 'Кто написал роман «Отцы и дети»?', test_id: tests[0].id },
-  { body: 'Во что Онегин играл сам с собой в доме своего дяди?', test_id: tests[1].id },
-  { body: 'Какой математический символ обычно содержится в иррациональном уравнении?', test_id: tests[1].id },
-  { body: 'Полный набор символов, используемый для кодирования, называют', test_id: tests[1].id },
-  { body: 'Какого оружия не существовало в Древнем мире?', test_id: tests[2].id },
-  { body: 'Сколько хромосом у человека?', test_id: tests[2].id },
-  { body: 'Какой фрукт упал на голову Архимеду', test_id: tests[2].id }])
+  { body: 'Какой герой очень известной волшебной сказки продал свою азбуку?', test: tests[0] },
+  { body: 'Единственная птица, у которой есть ушные раковины', test: tests[0] },
+  { body: 'Кто написал роман «Отцы и дети»?', test: tests[0] },
+  { body: 'Во что Онегин играл сам с собой в доме своего дяди?', test: tests[1] },
+  { body: 'Какой математический символ обычно содержится в иррациональном уравнении?', test: tests[1] },
+  { body: 'Полный набор символов, используемый для кодирования, называют', test: tests[1] },
+  { body: 'Какого оружия не существовало в Древнем мире?', test: tests[2] },
+  { body: 'Сколько хромосом у человека?', test: tests[2] },
+  { body: 'Какой фрукт упал на голову Архимеду', test: tests[2] }])
 
 answers = Answer.create!([
-  { body: 'Чиполлино', question_id: questions[0].id, correct:false },
-  { body: 'Буратино', question_id: questions[0].id, correct: false },
-  { body: 'Интеграл', question_id: questions[0].id },
-  { body: 'синтаксис', question_id: questions[1].id, correct: false },
-  { body: 'Скобки', question_id: questions[1].id },
-  { body: 'алфавит', question_id: questions[1].id, correct: false },
-  { body: 'Лук', question_id: questions[2].id, correct: false },
-  { body: 'Рогатка', question_id: questions[2].id, correct: false },
-  { body: 'Силу тока', question_id: questions[2].id },
-  { body: 'Яблоко', question_id: questions[3].id, correct: false },
-  { body: 'Влажность воздуха', question_id: questions[3].id },
-  { body: 'Македония', question_id: questions[3].id, correct: false },
-  { body: 'Бильярд', question_id:questions[4].id, correct: false },
-  { body: 'Домино', question_id:questions[4].id },
-  { body: 'Банан', question_id: questions[4].id, correct: false },
-  { body: 'Существительное', question_id: questions[5].id, correct: false },
-  { body: 'Гепард', question_id: questions[5].id},
-  { body: 'Крокодил', question_id: questions[5].id, correct: false },
-  { body: 'Гигантский кальмар', question_id: questions[6].id, correct: false },
-  { body: 'Белка-летяга', question_id: questions[6].id, correct: false },
-  { body: 'Белоголовый орлан', question_id: questions[6].id },
-  { body: 'Колуго', question_id: questions[7].id, correct: false },
-  { body: 'Всеядное животное', question_id: questions[7].id, correct: false },
-  { body: 'Потому что они любят друг друга', question_id: questions[7].id },
-  { body: 'Чтобы они не уплывали, когда спят', question_id: questions[8].id },
-  { body: 'У насекомых могут быть крылья, у пауков они отсутствуют', question_id: questions[8].id, correct: false },
-  { body: 'Крякает, как утка', question_id: questions[8].id }])
+  { body: 'Чиполлино', question: questions[0], correct:false },
+  { body: 'Буратино', question: questions[0], correct: false },
+  { body: 'Интеграл', question: questions[0] },
+  { body: 'синтаксис', question: questions[1], correct: false },
+  { body: 'Скобки', question: questions[1] },
+  { body: 'алфавит', question: questions[1], correct: false },
+  { body: 'Лук', question: questions[2], correct: false },
+  { body: 'Рогатка', question: questions[2], correct: false },
+  { body: 'Силу тока', question: questions[2] },
+  { body: 'Яблоко', question: questions[3], correct: false },
+  { body: 'Влажность воздуха', question: questions[3] },
+  { body: 'Македония', question: questions[3], correct: false },
+  { body: 'Бильярд', question:questions[4], correct: false },
+  { body: 'Домино', question:questions[4] },
+  { body: 'Банан', question: questions[4], correct: false },
+  { body: 'Существительное', question: questions[5], correct: false },
+  { body: 'Гепард', question: questions[5] },
+  { body: 'Крокодил', question: questions[5], correct: false },
+  { body: 'Гигантский кальмар', question: questions[6], correct: false },
+  { body: 'Белка-летяга', question: questions[6], correct: false },
+  { body: 'Белоголовый орлан', question: questions[6] },
+  { body: 'Колуго', question: questions[7], correct: false },
+  { body: 'Всеядное животное', question: questions[7], correct: false },
+  { body: 'Потому что они любят друг друга', question: questions[7] },
+  { body: 'Чтобы они не уплывали, когда спят', question: questions[8] },
+  { body: 'У насекомых могут быть крылья, у пауков они отсутствуют', question: questions[8], correct: false },
+  { body: 'Крякает, как утка', question: questions[8] }])
 
-  user_profile = UserProfile.create!([
-    { user_id: users[0].id, test_id: tests[0].id },
-    { user_id: users[0].id, test_id: tests[2].id },
-    { user_id: users[1].id, test_id: tests[1].id }
-  ])
