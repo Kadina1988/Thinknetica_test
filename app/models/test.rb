@@ -6,10 +6,10 @@ class Test < ApplicationRecord
   has_many :tests_users
   has_many :users, through: :tests_users, dependent: :destroy
 
-  def self.tests_same_category(category_name)
-    Test.joins(:category)
-    .where(categories: { title: category_name })
-    .order(title: :DESC)
-    .pluck(:title)
+  def self.same_category(category_name)
+    joins(:category)
+      .where(categories: { title: category_name })
+      .order(title: :DESC)
+      .pluck(:title)
   end
 end
