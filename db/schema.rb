@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_18_191643) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_21_104502) do
   create_table "answers", force: :cascade do |t|
     t.text "body", null: false
     t.boolean "correct", default: true, null: false
@@ -45,13 +45,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_18_191643) do
     t.index ["category_id"], name: "index_tests_on_category_id"
   end
 
-  create_table "user_profiles", force: :cascade do |t|
-    t.integer "user_id", null: false
+  create_table "tests_users", id: false, force: :cascade do |t|
     t.integer "test_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["test_id"], name: "index_user_profiles_on_test_id"
-    t.index ["user_id"], name: "index_user_profiles_on_user_id"
+    t.integer "user_id", null: false
+    t.index ["test_id", "user_id"], name: "index_tests_users_on_test_id_and_user_id", unique: true
   end
 
   create_table "users", force: :cascade do |t|
@@ -64,6 +61,4 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_18_191643) do
   add_foreign_key "questions", "tests"
   add_foreign_key "tests", "categories"
   add_foreign_key "tests", "users", column: "author_id"
-  add_foreign_key "user_profiles", "tests"
-  add_foreign_key "user_profiles", "users"
 end
