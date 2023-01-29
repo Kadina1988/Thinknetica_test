@@ -5,16 +5,8 @@ class User < ApplicationRecord
 
   validates :name, :email, presence: true
 
-  scope :f, -> {}
-
-  def self.f
-    puts 'salam'
+  def list_tests(level)
+    passed_tests.where(tests_users: { user_id: self.id })
+      .where(tests: { level: level })
   end
-
-
-
-  # def list_tests(level)
-  #   passed_tests.where(tests_users: { user_id: self.id })
-  #     .where(tests: { level: level })
-  # end
 end
