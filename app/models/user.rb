@@ -3,8 +3,18 @@ class User < ApplicationRecord
   has_many :tests_users
   has_many :passed_tests, through: :tests_users, source: :test, dependent: :destroy
 
-  def list_tests(level)
-    passed_tests.where(tests_users: { user_id: self.id })
-      .where(tests: { level: level })
+  validates :name, :email, presence: true
+
+  scope :f, -> {}
+
+  def self.f
+    puts 'salam'
   end
+
+
+
+  # def list_tests(level)
+  #   passed_tests.where(tests_users: { user_id: self.id })
+  #     .where(tests: { level: level })
+  # end
 end
