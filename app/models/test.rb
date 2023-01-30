@@ -8,15 +8,18 @@ class Test < ApplicationRecord
   has_many :tests_users
   has_many :users, through: :tests_users, dependent: :destroy
 
-  validates_uniqueness_of :title, scope: :level
+  validates :title, uniqueness: { scope: :level }
   validates :level, numericality: { only_integer: true, greater_than: 0 }
 
   scope :easy, -> { where(level:(0..1)) }
   scope :middle, -> { where(level:(2..4) ) }
   scope :hard, -> { where(level:(5..INFINITY)) }
   scope :same_category, -> (category_name) { joins(:category)
-                                           .where(categories: {title: category_name})
-                                           .order(title: :desc)
-                                           .pluck(:title) }
+                                             .where(categories: { title: category_name })
+                                             .order(title: :desc) }
+
+  def self.list
+    pluck(:title)
+  end
 
 end
