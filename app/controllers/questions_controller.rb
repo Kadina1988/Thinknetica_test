@@ -4,21 +4,22 @@ class QuestionsController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_question_not_found
 
   def index
-    @test_questions = @test.questions
+    @questions = @test.questions
   end
 
   def show
     render inline: '<%= @question.body %>'
   end
 
-  def new
-  end
+  def new; end
 
   def create
-      Question.create(
-      body: params[:question][:body],
-      test: @test
-    )
+    @question = @test.questions.build(question_params)
+    if @question.save
+      redirect_to test_questions_path
+    else
+      render :new
+    end
   end
 
   def destroy
@@ -26,6 +27,10 @@ class QuestionsController < ApplicationController
   end
 
   private
+
+  def question_params
+    params.require(:question).permit(:body)
+  end
 
   def set_test
     @test = Test.find(params[:test_id])
