@@ -1,0 +1,5 @@
+<h3>All questions test: <%= @test.title %>, level: <%= @test.level%></h3>
+<% @questions.each do |question|%>
+  <p><%= question.body %> </p>
+<% end %>
+
