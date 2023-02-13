@@ -1,0 +1,12 @@
+<tr>
+  <td><%= question.body%></td>
+  <td><%= link_to 'Show', test_question_path(@test, question) %></td>
+  <td><%= link_to 'Edit', [:edit, @test, question] %></td>
+  <td><%= button_to 'Delete', test_question_path(@test, question),
+                              method: :delete,
+                              form: { data: { turbo_confirm: 'are you sure?'} }
+                              %></td>
+
+
+</tr>
+
