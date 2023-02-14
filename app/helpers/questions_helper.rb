@@ -9,7 +9,7 @@ module QuestionsHelper
   end
 
   def current_year
-    Time.now.year
+    Time.current.year
   end
 
   def link_html
