@@ -1,5 +1,11 @@
 <h2>Tests</h2>
 
-<% @tests.each do |test| %>
-  <p><%= test.title %>: <%=test.questions.count %> questions </p>
-<% end %>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Questions</th>
+  </tr>
+  <%= render @tests %>
+</table>
+
+

@@ -1,7 +1,11 @@
 <h3><%= @question.body %></h3>
+<p>
+  <%= link_to 'edit', edit_question_path(@question)%> |
+  <%= link_to 'all questions', test_path(@question.test)%>
+</p>
+<div><%= button_to 'delete', question_path,
+                            method: :delete,
+                            form: { data: { turbo_confirm: 'are you sure?' } }
+                            %> </div>
 
-<div>
-  <%= link_to 'All quest.', test_questions_path %>|
-  <%= link_to 'Edit', edit_test_question_path %>
-</div><br>
-<div><%= button_to 'Delete', test_question_path,  method: :delete, form: { data: { turbo_confirm: 'are you sure?' } } %></div>
+

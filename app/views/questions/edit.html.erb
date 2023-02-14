@@ -1,2 +1,8 @@
-<h2>Edit <%= question_header %> question</h2>
-<%= render 'form' %>
+<h2><%= question_header %></h2>
+
+<%= form_with model: @question do |form| %>
+  <p><%= form.label :body %></p>
+  <p><%= form.text_field :body %></p>
+  <p><%= form.submit 'update' %></p>
+<% end %><br>
+<p><%= link_to 'back', question_path(@question) %></p>
