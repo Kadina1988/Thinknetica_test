@@ -12,7 +12,9 @@ module QuestionsHelper
     Time.current.year
   end
 
-  def link_html
-    link_to 'Project Test Guru', 'https://github.com/Kadina1988/Thinknetica_test'
+  def github_link_html
+    link_to 'Project Test Guru', 'https://github.com/Kadina1988/Thinknetica_test',
+    target: :_blank,
+    rel: { nofollow: true, noopener: true }
   end
 end

@@ -4,7 +4,7 @@
     <th>Question<th>
     <th></th>
   </tr>
-  <%= render "question" %>
+  <%= render partial: "question", collection: @test.questions  %>
 </table>
 <p><%= link_to 'new create', new_test_question_path(@test) %></p>
 <p><%= link_to 'back', tests_path %></p>
