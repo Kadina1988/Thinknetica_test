@@ -21,11 +21,11 @@ class QuestionsController < ApplicationController
   def show;end
 
   def update
-      if @question.update(question_params)
-        redirect_to question_path(@question)
-      else
-        render :edit
-      end
+    if @question.update(question_params)
+      redirect_to question_path(@question)
+    else
+      render :edit
+    end
   end
 
   def destroy
