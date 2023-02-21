@@ -1,0 +1,9 @@
+.success {
+  font-size: large;
+  color:rgb(13, 143, 41);
+}
+
+.not_succes {
+    font-size: large;
+    color: rgb(231, 43, 43);
+}
