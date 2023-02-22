@@ -10,6 +10,6 @@ class User < ApplicationRecord
   end
 
   def list_tests(level)
-    passed_tests.where(tests: { level: level })
+    passed_tests.where(tests: { level: })
   end
 end

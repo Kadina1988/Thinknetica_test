@@ -1,21 +1,17 @@
 class AnswersController < ApplicationController
-
-  before_action :set_answer, only: %i[ show edit update destroy ]
+  before_action :set_answer, only: %i[show edit update destroy]
   before_action :set_question, only: %i[new create]
 
-
-  def show
-  end
+  def show; end
 
   def new
     @answer = @question.answers.new
   end
 
-  def edit
-  end
+  def edit; end
 
   def create
-    @answer = Answer.new(answer_params)
+    @answer = @question.answers.new(answer_params)
     if @answer.save
       redirect_to @answer
     else
@@ -24,13 +20,12 @@ class AnswersController < ApplicationController
   end
 
   def update
-    if @answer.update
+    if @answer.update(answer_params)
       redirect_to answer_path(@answer)
     else
       render :edit
     end
   end
-
 
   def destroy
     @answer.destroy

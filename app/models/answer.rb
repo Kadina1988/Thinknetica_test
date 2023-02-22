@@ -9,7 +9,6 @@ class Answer < ApplicationRecord
   private
 
   def validate_count_answers
-    errors.add(:qategory_id, 'too much answers for question') if question.answers.size > 3
+    errors.add(:qategory_id, 'too much answers for question') if question.answers.size > 4
   end
-
 end
