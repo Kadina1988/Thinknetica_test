@@ -16,9 +16,9 @@ class QuestionsController < ApplicationController
     @question = @test.questions.new
   end
 
-  def edit;end
+  def edit; end
 
-  def show;end
+  def show; end
 
   def update
     if @question.update(question_params)

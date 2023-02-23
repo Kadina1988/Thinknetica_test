@@ -1,11 +1,15 @@
 class User < ApplicationRecord
   has_many :created_tests, class_name: 'Test', foreign_key: 'author_id', dependent: :destroy
-  has_many :tests_users
-  has_many :passed_tests, through: :tests_users, source: :test, dependent: :destroy
+  has_many :test_passages
+  has_many :passed_tests, through: :test_passages, source: :test, dependent: :destroy
 
   validates :name, :email, presence: true
 
+  def test_passage(test)
+    test_passages.order(id: :desc).find_by(test_id: test.id)
+  end
+
   def list_tests(level)
-    passed_tests.where(tests: { level: level })
+    passed_tests.where(tests: { level: })
   end
 end
