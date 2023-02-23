@@ -18,7 +18,7 @@ class TestPassage < ApplicationRecord
   end
 
   def test_result
-    result = 100 / (self.test.questions.count / self.correct_questions.to_f)
+    result = 100 * (self.test.correct_questions.to_f / self.test.questions.count)
     result.round 2
   end
 
@@ -51,7 +51,7 @@ class TestPassage < ApplicationRecord
   def next_question
     if new_record?
       test.questions.first
-    elsif updated_at?
+    else
       test.questions.order(:id).where('id > ?', current_question_id).first
     end
   end
