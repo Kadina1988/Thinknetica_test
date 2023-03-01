@@ -18,7 +18,7 @@ class TestPassage < ApplicationRecord
   end
 
   def test_result
-    result = 100 * (self.test.correct_questions.to_f / self.test.questions.count)
+    result = 100 * (self.correct_questions.to_f / self.test.questions.count)
     result.round 2
   end
 
