@@ -12,8 +12,6 @@ class ApplicationController < ActionController::Base
       cookies[:return_to_url] = request.url
       redirect_to login_path, alert: 'Are you Guru? Verify your Password'
     end
-
-    cookies[:email] = current_user&.email
   end
 
   def current_user

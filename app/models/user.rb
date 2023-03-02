@@ -6,7 +6,7 @@ class User < ApplicationRecord
   has_many :test_passages
   has_many :passed_tests, through: :test_passages, source: :test, dependent: :destroy
 
-  validates :email, format: { with: /\w{1,6}@\.com/ }
+  validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
 
   has_secure_password
 

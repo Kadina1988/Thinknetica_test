@@ -1,0 +1,13 @@
+.flash {
+    border: 4px, solid;
+    padding: 20px;
+    border-radius: 5px;
+  }
+
+.flash.alert {
+    background-color: #df5050;
+  }
+
+  .flash.notice {
+    background-color: rgb(127, 245, 127);
+  }
