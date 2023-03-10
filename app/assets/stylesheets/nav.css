@@ -10,3 +10,42 @@
     text-align: right;
 }
 
+.logout {
+    text-align: right;
+}
+
+.logout.admin {
+    text-align: right;
+    margin-bottom: 10pt;
+}
+
+.nav.nav-admin {
+    height: 55px;
+    padding: 15px;
+    line-height: 35px;
+    color: #ffffff;
+    background-color: aquamarine;
+    margin-bottom: 40px;
+}
+
+.nav-admin.title {
+    font-size: 140%;
+    font-weight: bold;
+    color: black;
+}
+
+.nav-admin.user {
+    float: right;
+    color: rgb(19, 9, 80);
+}
+
+.nav-admin.user-email {
+    color: black;
+    text-decoration: underline;
+}
+
+.nav.nav-admin
+a {
+    margin-top: auto;
+    color: #59e459;
+}

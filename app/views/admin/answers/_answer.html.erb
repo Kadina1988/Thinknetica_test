@@ -1,0 +1,11 @@
+<li>
+  <%= answer.body %><br>
+  <%= link_to 'show', admin_answer_path(answer) %>
+  <%= link_to 'edit', edit_admin_answer_path(answer) %>
+  <%= button_to 'delete', admin_answer_path(answer),
+                        method: :delete,
+                        form: { data: { turbo_confirm: 'are you sure?'} }
+                        %>
+
+
+</li>
