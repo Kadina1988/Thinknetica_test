@@ -2,7 +2,7 @@
 
 class Users::SessionsController < Devise::SessionsController
   # before_action :configure_sign_in_params, only: [:create]
-  before_action :user_defination, only: :create
+  # before_action :user_defination, only: :create
 
   # GET /resource/sign_in
   # def new
@@ -27,7 +27,9 @@ class Users::SessionsController < Devise::SessionsController
   #   devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])
   # end
 
-  def user_defination
-    redirect_to admin_tests_path if current_user.is_a?(Admin)
-  end
+  # def user_defination
+  #   redirect_to admin_tests_path if current_user.is_a?(Admin)
+  # end
+
+
 end
