@@ -17,7 +17,7 @@ class Admin::TestsController < Admin::BaseController
     if test.save
       redirect_to admin_tests_path
     else
-      render :new
+      redirect_to new_admin_test_path
     end
   end
 
