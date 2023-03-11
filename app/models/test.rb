@@ -1,14 +1,14 @@
 class Test < ApplicationRecord
   INFINITY = Float::INFINITY
 
-  belongs_to :author, class_name: 'User', foreign_key: 'author_id'
+  belongs_to :author, class_name: 'User', foreign_key: 'author_id', optional: true
   belongs_to :category
 
   has_many :questions, dependent: :destroy
-  has_many :test_passages
+  has_many :test_passages, dependent: :destroy
   has_many :users, through: :test_passages, dependent: :destroy
 
-  validates :title, uniqueness: { scope: :level }
+  validates :title, uniqueness: { scope: :level }, presence: true
   validates :level, numericality: { only_integer: true, greater_than: 0 }
 
   scope :easy, -> { where(level: (0..1)) }
