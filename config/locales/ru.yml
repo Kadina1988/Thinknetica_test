@@ -14,11 +14,6 @@ ru:
         level: 'Уровень'
         category_id: 'Категория'
 
-  layouts:
-    nav:
-      welcome: 'Привет %{email} Гуру'
-      logout: 'Выход'
-
   shared:
     errors:
       header:

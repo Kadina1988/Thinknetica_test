@@ -42,6 +42,10 @@ gem 'devise-i18n'
 
 gem 'rails-i18n', '~> 7.0'
 
+# UI
+gem 'bootstrap', '~> 5.2', '>= 5.2.3'
+gem 'jquery-rails'
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
