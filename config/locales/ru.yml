@@ -50,6 +50,9 @@ ru:
         one: '%{count} правильный ответ из %{questions} вопросов'
         other: '%{count} правильных ответов из %{questions} вопросов'
         few: '%{count} правильных ответа из %{questions} вопросов'
+    gist:
+      success_html: 'Gist успешно <a href="%{url}">сохранен</a>'
+      failure: "Во время сохранения произошла ошибка"
 
   admin:
     tests:
@@ -87,6 +90,13 @@ ru:
   test_mailer:
     completed_test:
       subject: 'Вы прошли тест'
+
+  gist_question_service:
+    gist_params:
+      description: 'Вопрос теста %{title} от Тест Гуру'
+      files: 'тест-гуру-вопрос.txt'
+
+
 
 
 
