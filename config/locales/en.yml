@@ -48,7 +48,9 @@ en:
         zero: 'zero correct answers'
         one: "%{count} answer correct from %{questions}"
         other: "%{count} answers correct from %{questions}"
-    gist:
+
+  gists:
+    create:
       success_html: "Gist was successfully <a href='%{url}'> created</a> "
       failure: "An error occurred while saving gist"
 

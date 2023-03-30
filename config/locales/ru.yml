@@ -50,7 +50,9 @@ ru:
         one: '%{count} правильный ответ из %{questions} вопросов'
         other: '%{count} правильных ответов из %{questions} вопросов'
         few: '%{count} правильных ответа из %{questions} вопросов'
-    gist:
+
+  gists:
+    create:
       success_html: 'Gist успешно <a href="%{url}">сохранен</a>'
       failure: "Во время сохранения произошла ошибка"
 

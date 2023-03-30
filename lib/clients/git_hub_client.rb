@@ -1,5 +1,4 @@
 class GitHubClient
-
   ROOT_ENDPOINT = 'https://api.github.com'
   ACCESS_TOKEN = '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'
 
@@ -20,5 +19,4 @@ class GitHubClient
   def setup_http_client
     Faraday.new(url: ROOT_ENDPOINT)
   end
-
 end

@@ -293,7 +293,6 @@ DEPENDENCIES
   devise-i18n
   dotenv-rails
   faker
-  faraday (~> 2.0)
   importmap-rails
   jbuilder
   jquery-rails
