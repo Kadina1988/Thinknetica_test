@@ -49,6 +49,11 @@ en:
         one: "%{count} answer correct from %{questions}"
         other: "%{count} answers correct from %{questions}"
 
+  gists:
+    create:
+      success_html: "Gist was successfully <a href='%{url}'> created</a> "
+      failure: "An error occurred while saving gist"
+
   admin:
     tests:
       create:
@@ -85,6 +90,11 @@ en:
   test_mailer:
     completed_test:
       subject: 'You just completed the Test Guru test'
+
+  gist_question_service:
+    gist_params:
+      description: 'Question of test %{title} from Test Guru '
+      files: 'test-guru-question.txt'
 
 
 

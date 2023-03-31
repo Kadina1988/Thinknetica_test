@@ -1,9 +1,9 @@
 <h3><%= t('.test') %> <%= @test_passage.test.title %></h3>
 
 <p><%= t('.question')%> <%= @test_passage.number %> <%= t('.from')%> <%= @test_passage.test.questions.count %> </p>
-
-<b><%= @test_passage.current_question.body %></b>
-
+<p>
+  <b><%= @test_passage.current_question.body %></b>
+</p>
 <%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form| %>
   <%= form.collection_check_boxes :answer_ids, @test_passage.current_question.answers, :id, :body, include_hidden: false do |b| %>
     <p>
@@ -11,7 +11,7 @@
       <%= b.label %>
     </p>
   <% end %>
+    <p><%= link_to 'Gist Question', gists_path, data: {turbo_method: :post} %></p>
   <p><%= form.submit t('.next') %></p>
 <% end %>
 
-<p><%= link_to t('.tests'), tests_path %></p>
